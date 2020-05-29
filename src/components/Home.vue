@@ -1,6 +1,6 @@
 <template>
     <div>
-        home
+        home home home 
         <el-button type="info" @click='checkout'>退出</el-button>
     </div>
 </template>
