@@ -11,6 +11,11 @@ import './assets/css/global.scss'
 import axios from 'axios'
 //设置默认url
 axios.defaults.baseURL = 'http://localhost:8081'
+//设置token
+axios.interceptors.request.use(config=>{
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
 //挂载到Vue的原型上
 Vue.prototype.$http = axios
 
