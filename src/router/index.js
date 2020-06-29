@@ -4,6 +4,7 @@ import Login from '../components/Login.vue'
 import Home from '../components/Home.vue'
 import Welcome from '../components/Welcome.vue'
 import User from '../components/user/User.vue'
+import Rols from '../components/Rols/Rols.vue'
 
 Vue.use(VueRouter)
 
@@ -26,7 +27,10 @@ Vue.use(VueRouter)
       },{
         path:'/user',
         component:User
-      }]
+      },{
+        path: '/rols',
+        component: Rols
+      },]
     }
 ]
 
