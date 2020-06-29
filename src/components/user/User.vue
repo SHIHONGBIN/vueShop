@@ -1,11 +1,7 @@
 <template>
   <div>
+      <BreadCrumbs firstNav='首页' secondNav='用户管理' lastNav='用户列表' url='user'></BreadCrumbs>
     <!-- 面包靴导航/ -->
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-      <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-    </el-breadcrumb>
 
     <el-card>
       <el-row :gutter="20">
@@ -126,6 +122,7 @@
 </template>
 
 <script>
+import BreadMenu from '../common/BreadMenu'
 export default {
   data() {
     var validateEmail = (rule, value, callback)=>{
@@ -195,6 +192,10 @@ export default {
   },
   created() {
     this.getUserList();
+  },
+  components:{
+      BreadCrumbs:BreadMenu,
+      // Titles:Title,
   },
   methods: {
     async getUserList() {
